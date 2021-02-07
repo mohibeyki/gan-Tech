@@ -1,2 +1,2 @@
-# gan-Tech
-gan Tech is a game engine
+# ganTech
+ganTech is a game engine
