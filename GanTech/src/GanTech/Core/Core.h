@@ -14,16 +14,24 @@
 //  You should have received a copy of the GNU General Public License
 //  along with this program.If not, see < https://www.gnu.org/licenses/>.
 
-#include <GanTech.h>
+#pragma once
 
-class Sandbox final : public GanTech::Application {
-public:
-	Sandbox() {
-	}
-	~Sandbox() {
-	}
-};
+#ifdef GT_PLATFORM_WINDOWS
+	#ifdef GT_BUILD_DLL
+		#define GT_API __declspec(dllexport)
+	#else
+		#define GT_API __declspec(dllimport)
+	#endif // GT_BUILD_DLL
+#else
+	#error GT only supports windows!
+#endif // GT_PLATFORM_WINDOWS
 
-GanTech::Application* GanTech::createApplication() {
-	return new Sandbox();
-}
+#ifdef GT_ENABLE_ASSERTS
+	#define GT_ASSERT(x, ...) { if(!(x)) { GT_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+	#define GT_CORE_ASSERT(x, ...) { if(!(x)) { GT_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+#else
+	#define GT_ASSERT(x, ...)
+	#define GT_CORE_ASSERT(x, ...)
+#endif
+
+#define BIT(x) (1 << (x))

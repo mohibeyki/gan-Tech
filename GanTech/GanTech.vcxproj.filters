@@ -1,36 +1,66 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="GanTech">
+      <UniqueIdentifier>{FF2D6147-6B0D-E0E2-7425-6BB9E0834644}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    <Filter Include="GanTech\Core">
+      <UniqueIdentifier>{B7E9715A-A34C-01FF-4CD2-39B53814CD81}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="GanTech\Events">
+      <UniqueIdentifier>{0345B5C3-EF12-A9C9-D8A6-19F0C413852E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Windows">
+      <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\GanTech.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\GanTech.h" />
+    <ClInclude Include="src\GanTech\Core\Application.h">
+      <Filter>GanTech\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\GanTech\Core.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\GanTech\Core\Core.h">
+      <Filter>GanTech\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\GanTech\Application.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\GanTech\Core\EntryPoint.h">
+      <Filter>GanTech\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\GanTech\EntryPoint.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\GanTech\Core\Log.h">
+      <Filter>GanTech\Core</Filter>
     </ClInclude>
+    <ClInclude Include="src\GanTech\Core\Window.h">
+      <Filter>GanTech\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GanTech\Events\ApplicationEvent.h">
+      <Filter>GanTech\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GanTech\Events\Event.h">
+      <Filter>GanTech\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GanTech\Events\KeyEvent.h">
+      <Filter>GanTech\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GanTech\Events\MouseEvent.h">
+      <Filter>GanTech\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
+      <Filter>Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gtpch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\GanTech\Application.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\GanTech\Core\Application.cpp">
+      <Filter>GanTech\Core</Filter>
     </ClCompile>
+    <ClCompile Include="src\GanTech\Core\Log.cpp">
+      <Filter>GanTech\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
+      <Filter>Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gtpch.cpp" />
   </ItemGroup>
 </Project>

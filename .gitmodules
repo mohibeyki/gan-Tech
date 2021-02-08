@@ -1,0 +1,6 @@
+[submodule "GanTech/vendor/spdlog"]
+	path = GanTech/vendor/spdlog
+	url = git@github.com:gabime/spdlog.git
+[submodule "GanTech/vendor/GLFW"]
+	path = GanTech/vendor/GLFW
+	url = git@github.com:glfw/glfw.git

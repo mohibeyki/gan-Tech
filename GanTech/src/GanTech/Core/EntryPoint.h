@@ -14,16 +14,19 @@
 //  You should have received a copy of the GNU General Public License
 //  along with this program.If not, see < https://www.gnu.org/licenses/>.
 
-#include <GanTech.h>
+#pragma once
 
-class Sandbox final : public GanTech::Application {
-public:
-	Sandbox() {
-	}
-	~Sandbox() {
-	}
-};
+#ifdef GT_PLATFORM_WINDOWS
 
-GanTech::Application* GanTech::createApplication() {
-	return new Sandbox();
+extern GanTech::Application* GanTech::createApplication();
+
+int main(int argc, char** argv) {
+	GanTech::Log::init();
+	GT_CORE_TRACE("Powered by ganTech");
+
+	auto *app = GanTech::createApplication();
+	app->run();
+	delete app;
 }
+
+#endif

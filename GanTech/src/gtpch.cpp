@@ -14,16 +14,4 @@
 //  You should have received a copy of the GNU General Public License
 //  along with this program.If not, see < https://www.gnu.org/licenses/>.
 
-#include <GanTech.h>
-
-class Sandbox final : public GanTech::Application {
-public:
-	Sandbox() {
-	}
-	~Sandbox() {
-	}
-};
-
-GanTech::Application* GanTech::createApplication() {
-	return new Sandbox();
-}
+#include "gtpch.h"

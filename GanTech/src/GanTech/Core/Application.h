@@ -14,16 +14,24 @@
 //  You should have received a copy of the GNU General Public License
 //  along with this program.If not, see < https://www.gnu.org/licenses/>.
 
-#include <GanTech.h>
+#pragma once
 
-class Sandbox final : public GanTech::Application {
-public:
-	Sandbox() {
-	}
-	~Sandbox() {
-	}
-};
+#include "GanTech/Core/Core.h"
+#include "GanTech/Events/Event.h"
+#include "GanTech/Core/Window.h"
 
-GanTech::Application* GanTech::createApplication() {
-	return new Sandbox();
+namespace GanTech {
+	class GT_API Application {
+	public:
+		Application();
+		virtual ~Application();
+
+		void run();
+	private:
+		std::unique_ptr<Window> mWindow;
+		bool running = true;
+	};
+
+	/// Client should return this!
+	Application* createApplication();
 }

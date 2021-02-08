@@ -14,16 +14,24 @@
 //  You should have received a copy of the GNU General Public License
 //  along with this program.If not, see < https://www.gnu.org/licenses/>.
 
-#include <GanTech.h>
+#pragma once
 
-class Sandbox final : public GanTech::Application {
-public:
-	Sandbox() {
-	}
-	~Sandbox() {
-	}
-};
+#include <cstdio>
 
-GanTech::Application* GanTech::createApplication() {
-	return new Sandbox();
-}
+#include <iostream>
+#include <memory>
+#include <utility>
+#include <algorithm>
+#include <functional>
+
+#include <string>
+#include <sstream>
+#include <vector>
+#include <unordered_map>
+#include <unordered_set>
+
+#include "GanTech/Core/Log.h"
+
+#ifdef GT_PLATFORM_WINDOWS
+	#include <Windows.h>
+#endif

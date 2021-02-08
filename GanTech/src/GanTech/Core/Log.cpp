@@ -14,16 +14,24 @@
 //  You should have received a copy of the GNU General Public License
 //  along with this program.If not, see < https://www.gnu.org/licenses/>.
 
-#include <GanTech.h>
+#include "gtpch.h"
 
-class Sandbox final : public GanTech::Application {
-public:
-	Sandbox() {
-	}
-	~Sandbox() {
-	}
-};
+#include "GanTech/Core/Log.h"
+#include "spdlog/sinks/stdout_color_sinks.h"
 
-GanTech::Application* GanTech::createApplication() {
-	return new Sandbox();
+namespace GanTech {
+
+	std::shared_ptr<spdlog::logger> Log::coreLogger;
+	std::shared_ptr<spdlog::logger> Log::clientLogger;
+
+	void Log::init() {
+		spdlog::set_pattern("%^[%T][%n]: %v%$");
+
+		coreLogger = spdlog::stdout_color_mt("ganTech");
+		coreLogger->set_level(spdlog::level::trace);
+
+		clientLogger = spdlog::stdout_color_mt("APP");
+		clientLogger->set_level(spdlog::level::trace);
+	}
+
 }
